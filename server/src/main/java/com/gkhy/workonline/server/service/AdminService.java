@@ -3,7 +3,9 @@ package com.gkhy.workonline.server.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.gkhy.workonline.server.utils.PageUtils;
 import com.gkhy.workonline.server.entity.AdminEntity;
+import com.gkhy.workonline.server.utils.R;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 /**
@@ -16,5 +18,9 @@ import java.util.Map;
 public interface AdminService extends IService<AdminEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+
+    public R login(String username, String password, HttpServletRequest request);
+
+    AdminEntity getAdminEntityByUserName(String username);
 }
 

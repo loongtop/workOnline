@@ -9,17 +9,17 @@ spring:
     password: root
     url: jdbc:mysql://192.168.20.10:3306/workOnline
     driver-class-name: com.mysql.cj.jdbc.Driver
-    hikari:
-      pool-name: DateWorkOnline
-      minimum-idle: 5
-      idle-timeout: 180000
-      maximum-pool-size: 10
-      auto-commit: true
-      #30min
-      max-lifetime: 1800000
-      #30s
-      connection-timeout: 30000
-      connection-test-query: SELECT 1
+#    hikari:
+#      pool-name: DateWorkOnline
+#      minimum-idle: 5
+#      idle-timeout: 180000
+#      maximum-pool-size: 10
+#      auto-commit: true
+#      #30min
+#      max-lifetime: 1800000
+#      #30s
+#      connection-timeout: 30000
+#      connection-test-query: SELECT 1
   #spring cloud configuration
   cloud:
     nacos:
@@ -44,3 +44,11 @@ mybatis-plus:
 logging:
   level:
     com.gkhy.gulimall: debug
+
+
+jwt:
+  tokenHeader: Authorization
+  secret: yeb-secret
+  expiration: 604800
+  tokenHead: Bearer
+

@@ -3,6 +3,7 @@ package com.gkhy.workonline.server.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import io.swagger.annotations.Api;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +26,7 @@ import com.gkhy.workonline.server.utils.R;
  * @email loongtop@gmail.com
  * @date 2021-03-21 14:47:09
  */
+@Api(tags = "banner管理")
 @RestController
 @RequestMapping("server/salary")
 public class SalaryController {
@@ -38,8 +40,9 @@ public class SalaryController {
     @RequiresPermissions("server:salary:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = salaryService.queryPage(params);
-
-        return R.ok().put("page", page);
+        String str = "leo ok";
+        return R.ok().put("page", str);
+        //return R.ok().put("page", page);
     }
 
 
